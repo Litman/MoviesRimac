@@ -48,11 +48,6 @@ class MovieTableViewCell: UITableViewCell {
         
     }
     
-    private func getUrl(_ path: String) -> URL {
-        let url = URL(string: "\(ConstantsURL.baseUrlImage)\(path)")
-        return url ?? URL(string: "")!
-        
-    }
     
 
     override func awakeFromNib() {

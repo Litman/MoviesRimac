@@ -65,6 +65,8 @@
 		F061B3222A8731560056FAAF /* SecurityRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F061B3212A8731560056FAAF /* SecurityRepository.swift */; };
 		F061B3252A8731D60056FAAF /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F061B3242A8731D60056FAAF /* KeychainSwift */; };
 		F0B784442A8AF2160019BFAF /* ConstantsURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B784432A8AF2160019BFAF /* ConstantsURL.swift */; };
+		F0E592572A8ED77100B3A625 /* MoviesRimacDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F0E592552A8ED77100B3A625 /* MoviesRimacDB.xcdatamodeld */; };
+		F0E592592A8EE25800B3A625 /* MoviesCoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E592582A8EE25800B3A625 /* MoviesCoreDataRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +145,8 @@
 		F061B31C2A872F4F0056FAAF /* RestApiSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestApiSessionManager.swift; sourceTree = "<group>"; };
 		F061B3212A8731560056FAAF /* SecurityRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityRepository.swift; sourceTree = "<group>"; };
 		F0B784432A8AF2160019BFAF /* ConstantsURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsURL.swift; sourceTree = "<group>"; };
+		F0E592562A8ED77100B3A625 /* MoviesRimacDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MoviesRimacDB.xcdatamodel; sourceTree = "<group>"; };
+		F0E592582A8EE25800B3A625 /* MoviesCoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesCoreDataRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				F02B79AA2A8AEF140033728D /* HomeApiRepository.swift */,
+				F0E592582A8EE25800B3A625 /* MoviesCoreDataRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -315,6 +320,7 @@
 				F061B2BE2A86B5950056FAAF /* Assets.xcassets */,
 				F061B2C02A86B5950056FAAF /* LaunchScreen.storyboard */,
 				F061B2C32A86B5950056FAAF /* Info.plist */,
+				F0E592552A8ED77100B3A625 /* MoviesRimacDB.xcdatamodeld */,
 			);
 			path = MoviesRimac;
 			sourceTree = "<group>";
@@ -613,6 +619,7 @@
 				F061B3222A8731560056FAAF /* SecurityRepository.swift in Sources */,
 				F061B2F22A86D0810056FAAF /* LoginViewController.swift in Sources */,
 				F01A92892A8D2B5B0080ECA0 /* ActivityView.swift in Sources */,
+				F0E592572A8ED77100B3A625 /* MoviesRimacDB.xcdatamodeld in Sources */,
 				F04242F42A8C72A50086CBBF /* Observable.swift in Sources */,
 				F02B79AB2A8AEF140033728D /* HomeApiRepository.swift in Sources */,
 				F061B31B2A872F0C0056FAAF /* RestApiInterceptor.swift in Sources */,
@@ -627,6 +634,7 @@
 				F01A928B2A8D2C630080ECA0 /* AlertPresentable.swift in Sources */,
 				F02B798A2A8A82AA0033728D /* MoviesModel.swift in Sources */,
 				F02B798E2A8A83520033728D /* BaseModelProtocol.swift in Sources */,
+				F0E592592A8EE25800B3A625 /* MoviesCoreDataRepository.swift in Sources */,
 				F04242EF2A8C72140086CBBF /* CGFloat+Help.swift in Sources */,
 				F02B79962A8AA0390033728D /* MovieTableViewCell.swift in Sources */,
 				F061B2B62A86B5940056FAAF /* AppDelegate.swift in Sources */,
@@ -1560,6 +1568,19 @@
 			productName = KeychainSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		F0E592552A8ED77100B3A625 /* MoviesRimacDB.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F0E592562A8ED77100B3A625 /* MoviesRimacDB.xcdatamodel */,
+			);
+			currentVersion = F0E592562A8ED77100B3A625 /* MoviesRimacDB.xcdatamodel */;
+			path = MoviesRimacDB.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F061B2AA2A86B5940056FAAF /* Project object */;
 }

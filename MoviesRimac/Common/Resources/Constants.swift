@@ -34,3 +34,9 @@ public enum Constants {
     
     static let wrong_user_or_password = "Verifique su usuario o contraseña."
 }
+
+func getUrl(_ path: String) -> URL {
+    let url = URL(string: "\(ConstantsURL.baseUrlImage)\(path)")
+    return url ?? URL(string: "")!
+    
+}

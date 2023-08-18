@@ -25,13 +25,14 @@ protocol HomePresenterProtocol: AnyObject {
     func startGetMovies()
     func loadMoreData()
     func moveToDetailView(data: MovieModel)
+    func loadDataFromDB()
     
 }
 
 protocol HomeViewProtocol: AnyObject {
     
     
-    func saveMovie(movie: MovieModel)
+    
     
     func reloadMoviesTable(withMovies data: [MovieModel]?)
     
@@ -46,6 +47,8 @@ protocol HomeInteractorProtocol: AnyObject {
     
     func saveMovie(data: MovieModel?, image: UIImage?)
     
+    func getMoviesFromDB()
+    
     
 }
 
@@ -56,4 +59,7 @@ protocol HomeInteractorToPresenterProtocol: AnyObject {
     func didReceiveSuccessMovies(listMovies: MoviesModel)
     
     func didReceiveSuccessMoreMovies(listMovies: MoviesModel)
+    
+    
+    func didReceiveSuccessMoviesDB(listMovies: [MovieModel])
 }

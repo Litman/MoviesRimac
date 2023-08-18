@@ -6,15 +6,17 @@
 //
 
 import Foundation
+import UIKit
 
 class HomeInteractor: HomeInteractorProtocol {
-       
     
     weak var presenter: HomeInteractorToPresenterProtocol?
     var repository: HomeApiRepository?
+    var repositoryDB: MoviesCoreDataRepository?
     
-    init(repository: HomeApiRepository) {
+    init(repository: HomeApiRepository, repositoryDB: MoviesCoreDataRepository) {
         self.repository = repository
+        self.repositoryDB = repositoryDB
     }
     
     func getListMovies(apiKey: String, page: String) {
@@ -38,5 +40,45 @@ class HomeInteractor: HomeInteractorProtocol {
             }
         })
     }
+    
+    func saveMovie(data: MovieModel?, image: UIImage?) {
+        
+        
+        repositoryDB?.saveMovie(movie: data!, withImage: image!)
+        
+        
+    }
+    
+    
+    func getMoviesFromDB() {
+        
+        repositoryDB?.fetchMoviesCoreData(completion: { [weak self] listMovies in
+            guard let self = self else { return }
+            
+            let listMoviesTemp = wrapLidtMoviesDBInDataModel(listCoreData: listMovies)
+            
+            presenter?.didReceiveSuccessMoviesDB(listMovies: listMoviesTemp)
+            
+        })
+        
+    }
+    
+    func wrapLidtMoviesDBInDataModel(listCoreData: [MoviesCoreData]) -> [MovieModel] {
+        var listMovies = [MovieModel]()
+        listCoreData.forEach {
+            (item) in
+            var movie = MovieModel()
+            movie.id = Int(item.id)
+            movie.overview = item.overview
+            movie.posterPath = item.poster_path
+            movie.releaseDate = item.release_date
+            movie.title = item.title
+            movie.voteAverage = item.vote_average
+            
+            listMovies.append(movie)
+        }
+        return listMovies
+    }
+    
     
 }

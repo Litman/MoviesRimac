@@ -14,8 +14,9 @@ class HomeRouter: HomeRouterProtocol {
     
     static func createModule() -> UIViewController {
         let repository: HomeApiRepository = HomeApiRepository()
+        let repositoryDB: MoviesCoreDataRepository = MoviesCoreDataRepository()
         let router = HomeRouter()
-        let interactor = HomeInteractor(repository: repository)
+        let interactor = HomeInteractor(repository: repository, repositoryDB: repositoryDB)
         let presenter = HomePresenter(interactor: interactor, router: router)
         let viewController = HomeViewController(presenter: presenter)
         presenter.view = viewController

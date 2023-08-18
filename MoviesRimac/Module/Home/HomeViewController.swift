@@ -14,6 +14,9 @@ class HomeViewController: UIViewController {
     private let nibCell = "MovieTableViewCell"
     private let cellId = "CellId"
     
+    // MARK: - Network check
+    var networkCheck = NetworkCheck.sharedInstance()
+    
     private var isLoading = false
     
     private let presenter: HomePresenterProtocol?
@@ -56,7 +59,7 @@ class HomeViewController: UIViewController {
         let nib = UINib(nibName: nibCell, bundle: nil)
         moviesTableView.register(nib, forCellReuseIdentifier: cellId)
 //        moviesTableView.separatorStyle = .none
-        
+        networkCheck.addObserver(observer: self)
     }
     
     private func setupView() {
@@ -128,12 +131,7 @@ extension HomeViewController: HomeViewProtocol {
             self.moviesTableView.reloadData()
         }
     }
-    
-    
-    func saveMovie(movie: MovieModel) {
-        
-    }
-    
+       
     
     func reloadMoreMovies(withMovies data: [MovieModel]?) {
         self.isLoading = false
@@ -149,9 +147,15 @@ extension HomeViewController: NetworkCheckerProtocol {
     
     func statusDidChange(status: NWPath.Status) {
         if status == .satisfied {
-            print("Connected")
+            listMovies?.removeAll()
+            self.moviesTableView.reloadData()
+            
+            presenter?.startGetMovies()
+            
         } else  if status == .unsatisfied {
-            print("Not Connected")
+            listMovies?.removeAll()
+            self.moviesTableView.reloadData()
+            presenter?.loadDataFromDB()
         }
     }
     

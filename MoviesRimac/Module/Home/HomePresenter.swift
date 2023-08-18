@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class HomePresenter: HomePresenterProtocol {
         
@@ -14,8 +15,8 @@ class HomePresenter: HomePresenterProtocol {
     weak var view: HomeViewProtocol?
     var interactor: HomeInteractorProtocol
     var router: HomeRouterProtocol
-    var currentPage = 1
-    var totalPage = 0
+    public var currentPage = 1
+    public var totalPage = 0
     
     init(interactor: HomeInteractorProtocol, router: HomeRouterProtocol) {
         self.interactor = interactor
@@ -24,8 +25,9 @@ class HomePresenter: HomePresenterProtocol {
         
     }
     
-    
     func startGetMovies() {
+        currentPage = 1
+        totalPage = 0
         let paging = "\(currentPage)"
         interactor.getListMovies(apiKey: Constants.apiKey, page: paging)
     }
@@ -44,6 +46,10 @@ class HomePresenter: HomePresenterProtocol {
         router.goToDetailViewController(from: view!, data: data)
     }
     
+    func loadDataFromDB() {
+        interactor.getMoviesFromDB()
+    }
+    
 }
 
 
@@ -54,11 +60,11 @@ extension HomePresenter: HomeInteractorToPresenterProtocol {
     }
     
     func didReceiveSuccessMovies(listMovies: MoviesModel) {
-        print("Llego Listado \(listMovies.totalPages) -- \(listMovies.page)")
         self.listMovies = listMovies.result
         totalPage = listMovies.totalPages ?? 0
         currentPage = listMovies.page ?? 0
         view?.reloadMoviesTable(withMovies: listMovies.result)
+        saveMoviesDB(listMovies: listMovies)
     }
     
     
@@ -67,6 +73,37 @@ extension HomePresenter: HomeInteractorToPresenterProtocol {
         totalPage = listMovies.totalPages ?? 0
         currentPage = listMovies.page ?? 0
         view?.reloadMoreMovies(withMovies: listMovies.result)
+    }
+    
+    func saveMoviesDB(listMovies: MoviesModel) {
+        
+        guard let movies = listMovies.result else {return}
+        
+        movies.forEach { item in
+            var imageRec: UIImage?
+            DispatchQueue.main.async {
+                
+//                let url = getUrl(item.posterPath ?? "")
+//                let data = try? Data(contentsOf: url)
+//                imageRec = UIImage(data: data!)
+                let dataTask = URLSession.shared.dataTask(with: getUrl(item.posterPath ?? "")) {
+                    [weak self] (data, _, _) in
+                    if let data = data {
+                        imageRec = UIImage(data: data)
+                        self?.interactor.saveMovie(data: item, image: imageRec)
+                    }
+                }
+                dataTask.resume()
+                
+            }
+            
+            
+        }
+        
+    }
+    
+    func didReceiveSuccessMoviesDB(listMovies: [MovieModel]) {
+        view?.reloadMoviesTable(withMovies: listMovies)
     }
     
 }
