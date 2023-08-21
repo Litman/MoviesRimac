@@ -10,8 +10,7 @@ import Foundation
 
 class HomePresenterMock: HomePresenterProtocol, HomeInteractorToPresenterProtocol {
     
-    
-    func diReceiveError() {
+    func diReceiveError(error: MoviesRimac.ServiceError) {
         
     }
     

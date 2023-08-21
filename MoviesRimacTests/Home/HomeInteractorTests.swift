@@ -38,7 +38,6 @@ final class HomeInteractorTests: XCTestCase {
         
         XCTAssertEqual(homeInteractorToPresenterMock.listMovies?.count, 20)
         
-        
     }
      
 }
