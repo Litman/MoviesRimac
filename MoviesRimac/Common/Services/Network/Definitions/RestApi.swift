@@ -41,14 +41,7 @@ public protocol RestApi: class {
                   headers: [String:String]?,
                   needsAuthentication: Bool,
                   completion: @escaping (ResponseApi<UIImage>) -> Void)
-    
-//    func upload<T: Decodable>(image: RestApiImage,
-//                              to url: String,
-//                              headers: [String:String]?,
-//                              params : [String:String]?,
-//                              needsAuthentication: Bool,
-//                              responseType type: T.Type,
-//                              completion: @escaping (ResponseApi<T>) -> Void)
+
     
     func requestJSON(url: String,
                      verb: HTTPVerb,

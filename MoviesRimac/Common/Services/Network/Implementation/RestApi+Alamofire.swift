@@ -75,43 +75,7 @@ extension RestApi {
             }
         }
     }
-    
-//    public func upload<T: Decodable>(image: RestApiImage,
-//                                     to url: String,
-//                                     headers: [String:String]? = nil,
-//                                     params : [String:String]? = nil,
-//                                     needsAuthentication: Bool = false,
-//                                     responseType type: T.Type = T.self,
-//                                     completion: @escaping (ResponseApi<T>) -> Void) {
-//        
-//        var serviceHeaders: HTTPHeaders?
-//        if let allHeaders = headers {
-//            serviceHeaders = HTTPHeaders(allHeaders)
-//        }
-//        let interceptor:RequestInterceptor? = needsAuthentication ? RestApiInterceptor(api: self) : nil
-//        let request = HTTPSession.shared.session.upload(multipartFormData: { multipart in
-//            let serializedImage = image.serialized()
-//            multipart.append(serializedImage.data, withName: image.name, fileName: image.fileName, mimeType: serializedImage.mimeType)
-//            if let params = params {
-//                for(key, value) in params{
-//                    if let value = value.data(using: String.Encoding.utf8){
-//                        multipart.append(value, withName: key)
-//                    }
-//                }
-//            }
-//        }, to: url, method: .post, headers: serviceHeaders, interceptor: interceptor)
-//        
-//        request.validate().responseDecodable(of: T.self) { (response) in
-//            switch response.result {
-//            case .success(let value):
-//                completion(.success(value))
-//                
-//            case .failure(let afError):
-//                let responseError = self.crearteError(from: afError, with: response.data)
-//                completion(.failure(responseError))
-//            }
-//        }
-//    }
+
     
 }
 

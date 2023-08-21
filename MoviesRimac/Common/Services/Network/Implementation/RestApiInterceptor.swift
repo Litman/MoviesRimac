@@ -33,23 +33,5 @@ struct RestApiInterceptor: Alamofire.RequestInterceptor {
                 return completion(.doNotRetryWithError(error))
         }
         
-//        api?.refreshToken(completion: { (response) in
-//            switch(response) {
-//            case .success(let responseToken):
-//                print("Ok Refresh - \(responseToken)")
-//                completion(.retry)
-//            case .failure(let afError):
-//                print("Ok Refresh Error - \(afError)")
-//                api?.tokenExpiredChangeLogout()
-//            }
-//        })
-
-//        api?.refreshToken(completion: { error in
-//            if let anError = error {
-//                api?.tokenExpiredChangeLogout()
-//            } else {
-//                completion(.retry)
-//            }
-//        })
     }
 }
