@@ -9,6 +9,9 @@ import Foundation
 
 public extension String {
     
+    
+    static var emptyString: String { return "" }
+    
     // MARK: - Properties
     var westernArabicNumeralsOnly: String {
         let pattern = UnicodeScalar("0")..."9"
@@ -53,6 +56,8 @@ public extension String {
         }
         return false
     }
+    
+    
 
 }
 public extension StringProtocol where Self: RangeReplaceableCollection {

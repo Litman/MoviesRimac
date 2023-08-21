@@ -34,12 +34,13 @@ protocol HomePresenterProtocol: AnyObject {
 
 protocol HomeViewProtocol: AnyObject {
     
-    
-    
-    
     func reloadMoviesTable(withMovies data: [MovieModel]?)
     
     func reloadMoreMovies(withMovies data: [MovieModel]?)
+    
+    func showError(errorMessage: String)
+    
+    
 }
 
 protocol HomeInteractorProtocol: AnyObject {
@@ -57,7 +58,7 @@ protocol HomeInteractorProtocol: AnyObject {
 
 protocol HomeInteractorToPresenterProtocol: AnyObject {
     
-    func diReceiveError()
+    func diReceiveError(error: ServiceError)
     
     func didReceiveSuccessMovies(listMovies: MoviesModel)
     

@@ -25,7 +25,7 @@ class HomeInteractor: HomeInteractorProtocol {
             case .success(let responseData):
                 self?.presenter?.didReceiveSuccessMovies(listMovies: responseData)
             case .failure(let networkError):
-                self?.presenter?.diReceiveError()
+                self?.presenter?.diReceiveError(error: networkError)
             }
         })
     }
@@ -36,7 +36,7 @@ class HomeInteractor: HomeInteractorProtocol {
             case .success(let responseData):
                 self?.presenter?.didReceiveSuccessMoreMovies(listMovies: responseData)
             case .failure(let networkError):
-                self?.presenter?.diReceiveError()
+                self?.presenter?.diReceiveError(error: networkError)
             }
         })
     }

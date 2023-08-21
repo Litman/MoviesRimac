@@ -148,6 +148,10 @@ extension HomeViewController: HomeViewProtocol {
         }
     }
     
+    func showError(errorMessage: String) {
+        self.showToast(message: errorMessage, font: UIFont.systemFont(ofSize: 16))
+    }
+    
 }
 
 extension HomeViewController: NetworkCheckerProtocol {

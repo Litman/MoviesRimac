@@ -29,8 +29,8 @@ class LoginPresenter: LoginPresenterProtocol {
     init(interactor: LoginInteractorProtocol, router: LoginRouterProtocol) {
         self.interactor = interactor
         self.router = router
-        user = ""
-        password = ""
+        user = String.emptyString
+        password = String.emptyString
         
     }
     

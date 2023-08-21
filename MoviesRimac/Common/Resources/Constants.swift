@@ -33,6 +33,8 @@ public enum Constants {
     static let message_alert_default = "Ocurrio algo inesperado."
     
     static let wrong_user_or_password = "Verifique su usuario o contraseña."
+    
+    static let title_description = "Descripción"
 }
 
 func getUrl(_ path: String) -> URL {

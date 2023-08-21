@@ -19,6 +19,13 @@ class MovieDetailViewController: UIViewController {
         return imageView
     }()
     
+    private let starsImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "ic_star")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
     private let punctuationMovieLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 24.0)
@@ -33,6 +40,18 @@ class MovieDetailViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         label.textAlignment = .center
+        
+        return label
+    } ()
+    
+    private let titleDescription: UILabel = {
+        let label = UILabel()
+        
+        label.font = UIFont.boldSystemFont(ofSize: 22.0)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.text = Constants.title_description
         
         return label
     } ()
@@ -75,11 +94,12 @@ class MovieDetailViewController: UIViewController {
     private lazy var verticalStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [
             movieTitle,
+            titleDescription,
             descriptionMovie,
             dateReleaseMovie
         ])
         stackView.axis = .vertical
-        stackView.distribution = .equalSpacing
+        stackView.distribution = .fillProportionally
         stackView.spacing = 8
         
         
@@ -128,6 +148,7 @@ class MovieDetailViewController: UIViewController {
         
         scrollContent.addSubview(movieImageView)
         scrollContent.addSubview(punctuationMovieLabel)
+        scrollContent.addSubview(starsImageView)
         scrollContent.addSubview(verticalStackView)
         
         verticalStackView.translatesAutoresizingMaskIntoConstraints = false
@@ -150,11 +171,16 @@ class MovieDetailViewController: UIViewController {
             movieImageView.centerXAnchor.constraint(equalTo: scrollContent.centerXAnchor),
             
             movieImageView.topAnchor.constraint(equalTo: scrollContent.topAnchor, constant: 50),
-            movieImageView.widthAnchor.constraint(equalToConstant: 200),
+            movieImageView.widthAnchor.constraint(equalToConstant: view.frame.width),
             movieImageView.heightAnchor.constraint(equalToConstant: 400),
             
             punctuationMovieLabel.trailingAnchor.constraint(equalTo: scrollContent.trailingAnchor, constant: -16),
             punctuationMovieLabel.topAnchor.constraint(equalTo: scrollContent.topAnchor, constant: 30),
+            
+            starsImageView.trailingAnchor.constraint(equalTo: punctuationMovieLabel.trailingAnchor),
+            starsImageView.widthAnchor.constraint(equalToConstant: 30),
+            starsImageView.heightAnchor.constraint(equalToConstant: 30),
+            
             
             verticalStackView.topAnchor.constraint(equalTo: movieImageView.bottomAnchor, constant: 8),
             verticalStackView.bottomAnchor.constraint(equalTo: scrollContent.bottomAnchor, constant: -16),

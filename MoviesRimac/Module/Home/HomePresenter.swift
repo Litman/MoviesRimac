@@ -59,8 +59,8 @@ class HomePresenter: HomePresenterProtocol {
 
 extension HomePresenter: HomeInteractorToPresenterProtocol {
        
-    func diReceiveError() {
-        
+    func diReceiveError(error: ServiceError) {
+        view?.showError(errorMessage: error.message)
     }
     
     func didReceiveSuccessMovies(listMovies: MoviesModel) {

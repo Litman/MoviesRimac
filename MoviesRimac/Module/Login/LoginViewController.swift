@@ -14,9 +14,10 @@ class LoginViewController: UIViewController {
         
         let textField = UITextField()
         textField.placeholder = "Enter user"
-        textField.borderStyle = .none
+        textField.borderStyle = .roundedRect
         textField.keyboardType = .emailAddress
         textField.layer.borderWidth = 0.5
+        
         textField.addTarget(self, action: #selector(handleUserChange), for: .editingChanged)
         return textField
     }()
@@ -26,6 +27,8 @@ class LoginViewController: UIViewController {
         textField.placeholder = "Enter password"
         textField.isSecureTextEntry = true
         textField.layer.borderWidth = 0.5
+        textField.borderStyle = .roundedRect
+        
         textField.addTarget(self, action: #selector(handlePasswordChange), for: .editingChanged)
         return textField
     }()
@@ -94,8 +97,8 @@ class LoginViewController: UIViewController {
     
     private func setupView() {
         
-        view.backgroundColor = .systemGray6
-        self.navigationController?.navigationBar.topItem?.title = "Login"
+        view.backgroundColor = .white
+        self.navigationController?.navigationBar.topItem?.title = "Movies Rimac"
         
     }
     
