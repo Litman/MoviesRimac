@@ -155,6 +155,7 @@
 		F0D157CC2A92C5C600D74C51 /* HomePresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterMock.swift; sourceTree = "<group>"; };
 		F0D157CE2A92D75700D74C51 /* HomeRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouterTests.swift; sourceTree = "<group>"; };
 		F0D157D02A92D92900D74C51 /* HomeRouterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouterMock.swift; sourceTree = "<group>"; };
+		F0D157D22A92F74400D74C51 /* MoviesRimacDev.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = MoviesRimacDev.xctestplan; sourceTree = "<group>"; };
 		F0E592562A8ED77100B3A625 /* MoviesRimacDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MoviesRimacDB.xcdatamodel; sourceTree = "<group>"; };
 		F0E592582A8EE25800B3A625 /* MoviesCoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesCoreDataRepository.swift; sourceTree = "<group>"; };
 		F0E5925C2A904AC800B3A625 /* HomeInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorTests.swift; sourceTree = "<group>"; };
@@ -304,6 +305,7 @@
 		F061B2A92A86B5940056FAAF = {
 			isa = PBXGroup;
 			children = (
+				F0D157D22A92F74400D74C51 /* MoviesRimacDev.xctestplan */,
 				F061B2B42A86B5940056FAAF /* MoviesRimac */,
 				F061B2CB2A86B5950056FAAF /* MoviesRimacTests */,
 				F061B2D52A86B5950056FAAF /* MoviesRimacUITests */,

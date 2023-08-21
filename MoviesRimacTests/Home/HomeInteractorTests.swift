@@ -13,18 +13,15 @@ final class HomeInteractorTests: XCTestCase {
     var sut: HomeInteractor!
     var homeApiMockRepository: HomeApiRepositoryProtocol!
     var homeDBMockRepository: MoviesCoreDataRepositoryProtocol!
-    var homeInteractorToPresenterMock: HomeInteractorToPresenterProtocol!
-    var homePresenterMock: HomePresenterProtocol!
-    
-    
+    var homeInteractorToPresenterMock: HomePresenterMock!
+ 
     
     override func setUpWithError() throws {
         homeDBMockRepository = HomeDBMockRepository()
         homeApiMockRepository = HomeMockApiRepository()
         homeInteractorToPresenterMock = HomePresenterMock()
-        homePresenterMock = HomePresenterMock()
         
-        sut = HomeInteractor(repository: homeApiMockRepository as! HomeApiRepository, repositoryDB: homeDBMockRepository as! MoviesCoreDataRepository)
+        sut = HomeInteractor(repository: homeApiMockRepository , repositoryDB: homeDBMockRepository)
         sut.presenter = homeInteractorToPresenterMock
         
     }
@@ -39,7 +36,7 @@ final class HomeInteractorTests: XCTestCase {
     func test_getMovies() {
         sut.getListMovies(apiKey: Constants.apiKey, page: "1")
         
-        XCTAssertEqual(homePresenterMock.listMovies?.count, 20)
+        XCTAssertEqual(homeInteractorToPresenterMock.listMovies?.count, 20)
         
         
     }

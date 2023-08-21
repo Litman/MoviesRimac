@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "D131B820-F947-41DC-AE25-48270DD3BECB",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:MoviesRimac.xcodeproj",
+      "identifier" : "F061B2B12A86B5940056FAAF",
+      "name" : "MoviesRimac"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:MoviesRimac.xcodeproj",
+        "identifier" : "F061B2C72A86B5950056FAAF",
+        "name" : "MoviesRimacTests"
+      }
+    }
+  ],
+  "version" : 1
+}

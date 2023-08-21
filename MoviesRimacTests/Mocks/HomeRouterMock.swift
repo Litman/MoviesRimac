@@ -16,11 +16,11 @@ class HomeRouterMock: HomeRouterProtocol {
         return UIViewController()
     }
     
-    func goToDetailViewController(from viewProtocol: MoviesRimac.HomeViewProtocol, data: MoviesRimac.MovieModel) {
+    func goToDetailViewController(data: MoviesRimac.MovieModel) {
         
     }
     
-    func goToLoginViewController(from viewProtocol: MoviesRimac.HomeViewProtocol) {
+    func goToLoginViewController() {
         
     }
     

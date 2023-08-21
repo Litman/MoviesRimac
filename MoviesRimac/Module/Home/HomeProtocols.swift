@@ -12,9 +12,9 @@ protocol HomeRouterProtocol: AnyObject {
     
     static func createModule() -> UIViewController
     
-    func goToDetailViewController(from viewProtocol: HomeViewProtocol, data: MovieModel)
+    func goToDetailViewController(data: MovieModel)
     
-    func goToLoginViewController(from viewProtocol: HomeViewProtocol)
+    func goToLoginViewController()
     
 }
 

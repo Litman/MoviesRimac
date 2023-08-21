@@ -9,12 +9,14 @@ import Foundation
 @testable import MoviesRimac
 
 class HomePresenterMock: HomePresenterProtocol, HomeInteractorToPresenterProtocol {
+    
+    
     func diReceiveError() {
         
     }
     
     func didReceiveSuccessMovies(listMovies: MoviesRimac.MoviesModel) {
-        
+        self.listMovies = listMovies.result
     }
     
     func didReceiveSuccessMoreMovies(listMovies: MoviesRimac.MoviesModel) {

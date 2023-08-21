@@ -11,10 +11,10 @@ import UIKit
 class HomeInteractor: HomeInteractorProtocol {
     
     weak var presenter: HomeInteractorToPresenterProtocol?
-    var repository: HomeApiRepository?
-    var repositoryDB: MoviesCoreDataRepository?
+    var repository: HomeApiRepositoryProtocol?
+    var repositoryDB: MoviesCoreDataRepositoryProtocol?
     
-    init(repository: HomeApiRepository, repositoryDB: MoviesCoreDataRepository) {
+    init(repository: HomeApiRepositoryProtocol, repositoryDB: MoviesCoreDataRepositoryProtocol) {
         self.repository = repository
         self.repositoryDB = repositoryDB
     }

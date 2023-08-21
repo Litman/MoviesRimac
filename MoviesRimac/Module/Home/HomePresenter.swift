@@ -43,7 +43,7 @@ class HomePresenter: HomePresenterProtocol {
     }
     
     func moveToDetailView(data: MovieModel) {
-        router.goToDetailViewController(from: view!, data: data)
+        router.goToDetailViewController(data: data)
     }
     
     func loadDataFromDB() {
@@ -51,7 +51,7 @@ class HomePresenter: HomePresenterProtocol {
     }
     
     func logout() {
-        router.goToLoginViewController(from: view!)
+        router.goToLoginViewController()
     }
     
 }

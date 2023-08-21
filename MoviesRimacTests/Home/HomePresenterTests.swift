@@ -11,8 +11,7 @@ import XCTest
 final class HomePresenterTests: XCTestCase {
     
     var sut: HomeInteractor!
-//    var homeApiMockRepository: HomeApiRepositoryProtocol!
-//    var homeDBMockRepository:
+
     
     
     override func setUpWithError() throws {

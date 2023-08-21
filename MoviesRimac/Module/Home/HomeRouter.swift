@@ -25,26 +25,21 @@ class HomeRouter: HomeRouterProtocol {
         return viewController
     }
     
-    func goToDetailViewController(from viewProtocol: HomeViewProtocol, data: MovieModel) {
+    func goToDetailViewController(data: MovieModel) {
         
-        let router = MovieDetailRouter.createModule(data: data) as! MovieDetailViewController
-        
-        guard let viewController = viewProtocol as? UIViewController else {
-            return
-        }
-        
-        viewController.navigationController?.pushViewController(router, animated: true)
+        let movieDetailViewController = MovieDetailRouter.createModule(data: data) as! MovieDetailViewController
+    
+        viewController?.navigationController?.pushViewController(movieDetailViewController, animated: true)
         
     }
     
-    func goToLoginViewController(from viewProtocol: HomeViewProtocol) {
+    func goToLoginViewController() {
         
         let router = LoginRouter.createModule()
         let navigationController = UINavigationController(rootViewController: router)
-        guard let viewController = viewProtocol as? UIViewController else { return }
-        navigationController.navigationBar.prefersLargeTitles = true
-        viewController.view.window?.rootViewController = navigationController
         
+        navigationController.navigationBar.prefersLargeTitles = true
+        viewController?.view.window?.rootViewController = navigationController
         
     }
     
