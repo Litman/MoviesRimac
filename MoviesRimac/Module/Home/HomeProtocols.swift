@@ -14,6 +14,8 @@ protocol HomeRouterProtocol: AnyObject {
     
     func goToDetailViewController(from viewProtocol: HomeViewProtocol, data: MovieModel)
     
+    func goToLoginViewController(from viewProtocol: HomeViewProtocol)
+    
 }
 
 protocol HomePresenterProtocol: AnyObject {
@@ -26,6 +28,7 @@ protocol HomePresenterProtocol: AnyObject {
     func loadMoreData()
     func moveToDetailView(data: MovieModel)
     func loadDataFromDB()
+    func logout()
     
 }
 

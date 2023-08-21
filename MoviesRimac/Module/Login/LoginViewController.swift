@@ -18,7 +18,6 @@ class LoginViewController: UIViewController {
         textField.keyboardType = .emailAddress
         textField.layer.borderWidth = 0.5
         textField.addTarget(self, action: #selector(handleUserChange), for: .editingChanged)
-        textField.text = "Admin"
         return textField
     }()
     
@@ -28,7 +27,6 @@ class LoginViewController: UIViewController {
         textField.isSecureTextEntry = true
         textField.layer.borderWidth = 0.5
         textField.addTarget(self, action: #selector(handlePasswordChange), for: .editingChanged)
-        textField.text = "Password*123"
         return textField
     }()
     
@@ -52,7 +50,7 @@ class LoginViewController: UIViewController {
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .heavy)
         button.backgroundColor = .lightGray
         button.setTitleColor(.gray, for: .disabled)
-//        button.isEnabled = false
+        button.isEnabled = false
         button.heightAnchor.constraint(equalToConstant: 44).isActive = true
         button.layer.cornerRadius = 22
         button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)

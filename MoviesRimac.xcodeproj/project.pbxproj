@@ -65,8 +65,15 @@
 		F061B3222A8731560056FAAF /* SecurityRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F061B3212A8731560056FAAF /* SecurityRepository.swift */; };
 		F061B3252A8731D60056FAAF /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F061B3242A8731D60056FAAF /* KeychainSwift */; };
 		F0B784442A8AF2160019BFAF /* ConstantsURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B784432A8AF2160019BFAF /* ConstantsURL.swift */; };
+		F0D157CD2A92C5C600D74C51 /* HomePresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D157CC2A92C5C600D74C51 /* HomePresenterMock.swift */; };
+		F0D157CF2A92D75700D74C51 /* HomeRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D157CE2A92D75700D74C51 /* HomeRouterTests.swift */; };
+		F0D157D12A92D92900D74C51 /* HomeRouterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D157D02A92D92900D74C51 /* HomeRouterMock.swift */; };
 		F0E592572A8ED77100B3A625 /* MoviesRimacDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F0E592552A8ED77100B3A625 /* MoviesRimacDB.xcdatamodeld */; };
 		F0E592592A8EE25800B3A625 /* MoviesCoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E592582A8EE25800B3A625 /* MoviesCoreDataRepository.swift */; };
+		F0E5925D2A904AC800B3A625 /* HomeInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E5925C2A904AC800B3A625 /* HomeInteractorTests.swift */; };
+		F0E5925F2A906C8500B3A625 /* LoginInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E5925E2A906C8500B3A625 /* LoginInteractorTests.swift */; };
+		F0E592612A906DF600B3A625 /* LoginPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E592602A906DF600B3A625 /* LoginPresenterTests.swift */; };
+		F0E592632A90703E00B3A625 /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E592622A90703E00B3A625 /* HomePresenterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,8 +152,15 @@
 		F061B31C2A872F4F0056FAAF /* RestApiSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestApiSessionManager.swift; sourceTree = "<group>"; };
 		F061B3212A8731560056FAAF /* SecurityRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityRepository.swift; sourceTree = "<group>"; };
 		F0B784432A8AF2160019BFAF /* ConstantsURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsURL.swift; sourceTree = "<group>"; };
+		F0D157CC2A92C5C600D74C51 /* HomePresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterMock.swift; sourceTree = "<group>"; };
+		F0D157CE2A92D75700D74C51 /* HomeRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouterTests.swift; sourceTree = "<group>"; };
+		F0D157D02A92D92900D74C51 /* HomeRouterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouterMock.swift; sourceTree = "<group>"; };
 		F0E592562A8ED77100B3A625 /* MoviesRimacDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MoviesRimacDB.xcdatamodel; sourceTree = "<group>"; };
 		F0E592582A8EE25800B3A625 /* MoviesCoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesCoreDataRepository.swift; sourceTree = "<group>"; };
+		F0E5925C2A904AC800B3A625 /* HomeInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorTests.swift; sourceTree = "<group>"; };
+		F0E5925E2A906C8500B3A625 /* LoginInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractorTests.swift; sourceTree = "<group>"; };
+		F0E592602A906DF600B3A625 /* LoginPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterTests.swift; sourceTree = "<group>"; };
+		F0E592622A90703E00B3A625 /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -328,6 +342,9 @@
 		F061B2CB2A86B5950056FAAF /* MoviesRimacTests */ = {
 			isa = PBXGroup;
 			children = (
+				F0D157CB2A92C58600D74C51 /* Mocks */,
+				F0E5925B2A904AA600B3A625 /* Home */,
+				F0E5925A2A904A9A00B3A625 /* Login */,
 				F061B2CC2A86B5950056FAAF /* MoviesRimacTests.swift */,
 			);
 			path = MoviesRimacTests;
@@ -466,6 +483,34 @@
 				F0B784432A8AF2160019BFAF /* ConstantsURL.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		F0D157CB2A92C58600D74C51 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				F0D157CC2A92C5C600D74C51 /* HomePresenterMock.swift */,
+				F0D157D02A92D92900D74C51 /* HomeRouterMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		F0E5925A2A904A9A00B3A625 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F0E5925E2A906C8500B3A625 /* LoginInteractorTests.swift */,
+				F0E592602A906DF600B3A625 /* LoginPresenterTests.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		F0E5925B2A904AA600B3A625 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F0E5925C2A904AC800B3A625 /* HomeInteractorTests.swift */,
+				F0E592622A90703E00B3A625 /* HomePresenterTests.swift */,
+				F0D157CE2A92D75700D74C51 /* HomeRouterTests.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -668,7 +713,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0E592612A906DF600B3A625 /* LoginPresenterTests.swift in Sources */,
 				F061B2CD2A86B5950056FAAF /* MoviesRimacTests.swift in Sources */,
+				F0E5925F2A906C8500B3A625 /* LoginInteractorTests.swift in Sources */,
+				F0D157D12A92D92900D74C51 /* HomeRouterMock.swift in Sources */,
+				F0D157CF2A92D75700D74C51 /* HomeRouterTests.swift in Sources */,
+				F0D157CD2A92C5C600D74C51 /* HomePresenterMock.swift in Sources */,
+				F0E592632A90703E00B3A625 /* HomePresenterTests.swift in Sources */,
+				F0E5925D2A904AC800B3A625 /* HomeInteractorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -813,6 +865,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T82X2VC2NM;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MARKETING_VERSION = 1.0;
@@ -831,6 +884,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T82X2VC2NM;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = GhostL.MoviesRimacUITests;
@@ -905,6 +959,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = T82X2VC2NM;
+				ENABLE_TESTABILITY = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MoviesRimac/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -933,6 +988,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T82X2VC2NM;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MARKETING_VERSION = 1.0;
@@ -951,6 +1007,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T82X2VC2NM;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = GhostL.MoviesRimacUITests;
@@ -1025,6 +1082,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = T82X2VC2NM;
+				ENABLE_TESTABILITY = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MoviesRimac/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1053,6 +1111,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T82X2VC2NM;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MARKETING_VERSION = 1.0;
@@ -1071,6 +1130,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T82X2VC2NM;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = GhostL.MoviesRimacUITests;
@@ -1179,6 +1239,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T82X2VC2NM;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MARKETING_VERSION = 1.0;
@@ -1197,6 +1258,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T82X2VC2NM;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = GhostL.MoviesRimacUITests;
@@ -1361,6 +1423,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = T82X2VC2NM;
+				ENABLE_TESTABILITY = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MoviesRimac/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1389,6 +1452,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T82X2VC2NM;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MARKETING_VERSION = 1.0;
@@ -1408,6 +1472,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T82X2VC2NM;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MARKETING_VERSION = 1.0;
@@ -1426,6 +1491,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T82X2VC2NM;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = GhostL.MoviesRimacUITests;
@@ -1443,6 +1509,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T82X2VC2NM;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = GhostL.MoviesRimacUITests;

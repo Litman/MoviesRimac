@@ -50,6 +50,10 @@ class HomePresenter: HomePresenterProtocol {
         interactor.getMoviesFromDB()
     }
     
+    func logout() {
+        router.goToLoginViewController(from: view!)
+    }
+    
 }
 
 

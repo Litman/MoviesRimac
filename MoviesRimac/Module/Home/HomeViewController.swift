@@ -58,7 +58,7 @@ class HomeViewController: UIViewController {
         moviesTableView.dataSource = self
         let nib = UINib(nibName: nibCell, bundle: nil)
         moviesTableView.register(nib, forCellReuseIdentifier: cellId)
-//        moviesTableView.separatorStyle = .none
+
         networkCheck.addObserver(observer: self)
     }
     
@@ -68,6 +68,9 @@ class HomeViewController: UIViewController {
         
         title = "Rimac Movies"
         self.navigationItem.largeTitleDisplayMode = .never
+        
+        let logoutButton = UIBarButtonItem(image: UIImage(named: "ic_logout"), style: .plain, target: self, action: #selector(self.handleLogout)) 
+        self.navigationItem.rightBarButtonItem  = logoutButton
     }
     
     private func callWebService() {
@@ -80,7 +83,11 @@ class HomeViewController: UIViewController {
             presenter?.loadMoreData()
             
         }
-            
+        
+    }
+    
+    @objc private func handleLogout() {
+        presenter?.logout()
         
     }
 

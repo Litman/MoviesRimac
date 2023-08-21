@@ -37,4 +37,15 @@ class HomeRouter: HomeRouterProtocol {
         
     }
     
+    func goToLoginViewController(from viewProtocol: HomeViewProtocol) {
+        
+        let router = LoginRouter.createModule()
+        let navigationController = UINavigationController(rootViewController: router)
+        guard let viewController = viewProtocol as? UIViewController else { return }
+        navigationController.navigationBar.prefersLargeTitles = true
+        viewController.view.window?.rootViewController = navigationController
+        
+        
+    }
+    
 }

@@ -9,7 +9,15 @@ import Foundation
 import CoreData
 import UIKit
 
-class MoviesCoreDataRepository {
+public protocol MoviesCoreDataRepositoryProtocol {
+    
+    func saveMovie(movie: MovieModel, withImage image: UIImage)
+    func fetchMoviesCoreData(completion: @escaping ([MoviesCoreData]) -> Void)
+    
+}
+
+
+class MoviesCoreDataRepository : MoviesCoreDataRepositoryProtocol {
     
     let context = AppDelegate.shared.persistentContainer.viewContext
     

@@ -44,6 +44,7 @@ extension RestApi {
                      needsAuthentication: Bool = false,
                      completion: @escaping (ResponseApi<Any>) -> Void) {
         let request = createRequest(at: url, verb: .get, headers: headers, needsAuthentication: needsAuthentication)
+        
         request.responseJSON { response in
             switch response.result {
             case .success(let json):
@@ -55,6 +56,7 @@ extension RestApi {
                 completion(.failure(responseError))
             }
         }
+        
     }
     
     public func download(imageAt url: String,
